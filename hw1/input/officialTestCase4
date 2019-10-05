@@ -1,0 +1,7 @@
+begin
+    // comment
+    
+    /* 
+    comment
+    */
+end;

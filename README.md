@@ -1,0 +1,5 @@
+Usage
+===
+```
+./checker <hw?> <scriptFilename>
+```

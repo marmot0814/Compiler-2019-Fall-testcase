@@ -1,0 +1,55 @@
+<id: foo>
+<(>
+<id: a>
+<,>
+<id: b>
+<:>
+<KWinteger>
+<)>
+<:>
+<KWinteger>
+<;>
+1: foo( a, b: integer ): integer;
+<KWbegin>
+2: begin
+<KWreturn>
+<id: a>
+<*>
+<id: b>
+<;>
+3: 	return a*b;
+<KWend>
+4: end
+<KWend>
+<id: foo>
+5: end foo
+6: 
+<KWbegin>
+7: begin
+<KWvar>
+<id: a>
+<:=>
+<integer: 2>
+<;>
+8:     var a:= 2;
+9: 
+<KWif>
+<id: a>
+<>>
+<integer: 1>
+<KWthen>
+10:     if a > 1 then
+<KWprint>
+<id: foo>
+<(>
+<integer: 2>
+<,>
+<integer: 3>
+<)>
+<;>
+11: 		print foo(2,3);
+<KWend>
+<KWif>
+12: 	end if
+<KWend>
+13: end
