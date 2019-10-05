@@ -1,5 +1,5 @@
 Usage
 ===
 ```
-./checker <hw?> <scriptFilename>
+./test.sh <hw?> <scriptFilename>
 ```
