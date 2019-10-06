@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$#" -ne 3 ]; then
+    echo "Usage: ./test.sh <hw?> <script filename>"
+    exit 0
+fi
+
 cyan=`tput setaf 51`
 green=`tput setaf 46`
 yellow=`tput setaf 226`
