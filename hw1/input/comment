@@ -1,0 +1,6 @@
+// it just a c++ style comment
+/*
+   it a normal c comment ""
+  */
+
+/* /*comment*/ "string"

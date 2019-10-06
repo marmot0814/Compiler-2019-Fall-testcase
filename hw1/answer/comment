@@ -1,0 +1,7 @@
+1: // it just a c++ style comment
+2: /*
+3:    it a normal c comment ""
+4:   */
+5: 
+<string: string>
+6: /* /*comment*/ "string"
