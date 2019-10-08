@@ -5,3 +5,10 @@
 5: 
 <string: string>
 6: /* /*comment*/ "string"
+7: 
+8: //&S+
+9: 
+10: /* comment */
+11: 
+14: //&S+&S-
+15: 
