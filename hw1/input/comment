@@ -4,3 +4,13 @@
   */
 
 /* /*comment*/ "string"
+
+//&S+
+
+/* comment */
+
+//&S-&S+
+
+//&S+&S-
+
+//&S-abcd
