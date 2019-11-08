@@ -1,0 +1,16 @@
+"begin" "end"
+123.0E123
+123E00123
+00123E4
+009e123
+123e12300
+12300e123
+"aaaaaaa""bbbbbbb"; // aaaaaaa"bbbbbbb
+""""		// string: ""
+"""ab"""  	// string: "ab"
+"aa"bb"cc"
+"aa""bb""cc"	// string: aa"bb"cc
+""  ""
+"ab""c"		// string ab"c
+""a""
+""""		// string :"
