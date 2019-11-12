@@ -1,0 +1,42 @@
+<string: begin>
+<string: end>
+1: "begin" "end"
+<scientific: 123.0E123>
+2: 123.0E123
+<scientific: 123E0>
+<oct_integer: 0123>
+3: 123E00123
+<oct_integer: 00123>
+<id: E4>
+4: 00123E4
+<oct_integer: 00>
+<scientific: 9e123>
+5: 009e123
+<scientific: 123e12300>
+6: 123e12300
+<scientific: 12300e123>
+7: 12300e123
+<string: aaaaaaa"bbbbbbb>
+<;>
+8: "aaaaaaa""bbbbbbb"; // aaaaaaa"bbbbbbb
+<string: ">
+9: """"		// string: ""
+<string: "ab">
+10: """ab"""  	// string: "ab"
+<string: aa>
+<id: bb>
+<string: cc>
+11: "aa"bb"cc"
+<string: aa"bb"cc>
+12: "aa""bb""cc"	// string: aa"bb"cc
+<string: >
+<string: >
+13: ""  ""
+<string: ab"c>
+14: "ab""c"		// string ab"c
+<string: >
+<id: a>
+<string: >
+15: ""a""
+<string: ">
+16: """"		// string :"
