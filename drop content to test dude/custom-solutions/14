@@ -1,0 +1,19 @@
+1: /**
+2:  * second sequential compound in function
+3:  */
+4: //&T-
+5: err;
+6: 
+7: func():integer;
+8: begin
+9:         begin
+10:             return 321;
+11:         end
+12: end
+13: // error
+
+|--------------------------------------------------------------------------
+| Error found in Line #14: begin
+|
+| Unmatched token: begin
+|--------------------------------------------------------------------------
