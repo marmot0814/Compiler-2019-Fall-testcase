@@ -1,0 +1,29 @@
+1: /**
+2:  * for loops
+3:  */
+4: //&T-
+5: corerrrect;
+6: 
+7: begin 
+8:     var a: -1;
+9:     var b: -001;
+10:     var b: -0.01;
+11:     var b: 0.01;
+12:     for i := 1 to 5 do
+13:     end do
+14:     
+15:     for i := 1 to 5 do
+16:         begin
+17:             begin
+18:             end
+19:         end
+20:     end do
+21:     for i := 1 to 002 do
+22:     end do
+23:     // stop here
+
+|--------------------------------------------------------------------------
+| Error found in Line #24:     for i := -
+|
+| Unmatched token: -
+|--------------------------------------------------------------------------
