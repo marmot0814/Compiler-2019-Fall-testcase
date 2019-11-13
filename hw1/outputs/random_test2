@@ -1,0 +1,81 @@
+<float: 111.1>
+1: 111.1
+<float: 1002.1>
+2: 1002.1
+<scientific: 0.1e-9>
+3: 0.1e-9
+<oct_integer: 00000>
+4: 00000
+<integer: 0>
+<float: 9.1>
+5: 09.1
+<integer: 3>
+<->
+<integer: 3>
+6: 3-3
+<integer: 3>
+<>>
+<<>
+<integer: 0>
+7: 3 >< 0
+<integer: 3>
+<<>>
+<integer: 3>
+8: 3 <> 3
+<KWarray>
+<,>
+<KWbegin>
+<,>
+<KWboolean>
+<,>
+<KWdef>
+<,>
+<KWdo>
+<,>
+<KWelse>
+<,>
+<KWend>
+<,>
+<KWfalse>
+<,>
+<KWfor>
+<,>
+<KWinteger>
+<,>
+<KWif>
+<,>
+<KWof>
+<,>
+<KWprint>
+<,>
+<KWread>
+<,>
+<KWreal>
+<,>
+<KWstring>
+<,>
+<KWthen>
+<,>
+<KWto>
+<,>
+<KWtrue>
+<,>
+<KWreturn>
+<,>
+<KWvar>
+<,>
+<KWwhile>
+9: array, begin, boolean, def, do, else, end, false, for, integer, if, of, print, read, real, string, then, to, true, return, var, while
+<:>
+<,>
+<;>
+<)>
+<(>
+<)>
+<[>
+<]>
+10: : , ; )() []
+<scientific: 0.1E-9>
+11: 0.1E-9
+12: // if then else
+13: /* begin

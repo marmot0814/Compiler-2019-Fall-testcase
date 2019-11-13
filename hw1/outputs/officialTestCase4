@@ -1,0 +1,10 @@
+<KWbegin>
+1: begin
+2:     // comment
+3:     
+4:     /* 
+5:     comment
+6:     */
+<KWend>
+<;>
+7: end;

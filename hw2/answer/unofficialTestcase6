@@ -1,0 +1,20 @@
+1: /**
+2:  * stupid arrays
+3:  */
+4: //&T-
+5: correct;
+6: 
+7: begin 
+8:     var a: array 1 to 2 of real;
+9:     var a: array 1 to 2 of array 1 to 2 of array 3 to 5 of real;
+10:     var c, d : integer;
+11:     a[10][11][22][33][555][111][a+a] := 1;
+12:     a[0010][11][22][33][555][111][a+a] := 1;
+13:     a[-10][11][22][33][555][111][a+a] := 1;
+14: end
+15: 
+16: end correct
+
+|--------------------------------|
+|  There is no syntactic error!  |
+|--------------------------------|

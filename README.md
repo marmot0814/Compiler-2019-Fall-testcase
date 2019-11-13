@@ -1,5 +1,5 @@
 Usage
 ===
 ```
-./test.sh <hw?> <scriptFilename>
+python3 test.py --script <scriptFilename> --hw <hw?>
 ```
