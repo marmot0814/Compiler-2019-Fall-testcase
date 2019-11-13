@@ -1,6 +1,0 @@
-<string: I am a normal string>
-1: "I am a normal string"
-<string: I am a string with one quote " sign>
-2: "I am a string with one quote "" sign"
-<string: // Although I look like a comment, but I am a "string" with many quotes>
-3: "// Although I look like a comment, but I am a ""string"" with many quotes"
