@@ -37,7 +37,7 @@ class Grader:
     def gen_output(self, case_id):
         test_case = "%s/%s" % ("input", self.test_cases[case_id])
         output_file = "%s/%s" % (self.output_dir, self.test_cases[case_id])
-        
+
         clist = [self.parser, test_case]
         cmd = " ".join(clist)
         try:
@@ -74,25 +74,35 @@ class Grader:
             line_num += 1
             if line1.rstrip() !=  line2.rstrip():
                 ok = False
-                diff_output.append(["Difference found in line %d" % line_num, 
+                diff_output.append(["Difference found in line %d" % line_num,
                                     "sample: " + line1.rstrip('\n'),
                                     "yours:  " + line2.rstrip('\n')])
 
         if len(sample_content) > line_num:
             ok = False
             for idx in range(line_num, len(sample_content)):
-                diff_output.append(["Difference found in line %d" % (idx+1), 
+                diff_output.append(["Difference found in line %d" % (idx+1),
                                     "sample: " + sample_content[idx].rstrip('\n'),
                                     "yours:"])
         if len(output_content) > line_num:
             ok = False
             for idx in range(line_num, len(output_content)):
-                diff_output.append(["Difference found in line %d" % (idx+1), 
+                diff_output.append(["Difference found in line %d" % (idx+1),
                                     "sample:",
                                     "yours:  " + output_content[idx].rstrip('\n')])
 
-        return ok, diff_output
-    
+        test_case = "%s/%s" % ("input", self.test_cases[case_id])
+        clist = ["valgrind", "--leak-check=full", "--show-leak-kinds=all", "--error-exitcode=1", self.parser, test_case]
+        cmd = " ".join(clist)
+        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        proc.communicate()
+        memory_leak = False
+
+        if proc.returncode:
+            memory_leak = True
+        
+        return ok, diff_output, memory_leak
+
     def test_sample_case(self, case_id):
         self.gen_output(case_id)
 
@@ -101,16 +111,25 @@ class Grader:
     def run(self):
         for b_id in self.case_id_list:
             c_name = self.test_cases[b_id]
-            ok, diff_output = self.test_sample_case(b_id)
+            ok, diff_output, memory_leak = self.test_sample_case(b_id)
             if ok:
-                print(Colors.YELLOW + "Running test case: " + Colors.BLUE + c_name + "  ==>  " + Colors.GREEN + "Pass!")
+                print(Colors.YELLOW + "Running test case: " + Colors.BLUE + c_name + "  ==>  " + Colors.GREEN + "Pass!", end=',')
+                if memory_leak:
+                    print(Colors.RED + "  Memory Leak!!!")
+                else:
+                    print(Colors.GREEN + "  No Memory Leak!")
+                
             else:
-                print(Colors.YELLOW + "Running test case: " + Colors.BLUE + c_name + "  ==>  " + Colors.RED + "Fail!")
+                print(Colors.YELLOW + "Running test case: " + Colors.BLUE + c_name + "  ==>  " + Colors.RED + "Fail!", end=',')
+                if memory_leak:
+                    print(Colors.RED + "  Memory Leak!!!")
+                else:
+                    print(Colors.GREEN + "  No Memory Leak!")
                 for output in diff_output:
                     print(Colors.RED + output[0])
                     print(Colors.BLUE + output[1])
                     print(Colors.GREEN + output[2])
-                
+
 
 def main():
     parser = ArgumentParser()
