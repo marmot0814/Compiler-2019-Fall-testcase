@@ -14,15 +14,14 @@ class Colors:
     RED = '\033[91m'
 
 class Grader:
-    def __init__(self, parser, hw, output_dir):
+    def __init__(self, parser, output_dir):
         self.parser = parser
-        self.hw = hw
         self.output_dir = output_dir
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)
 
     def get_case_id_list(self, case_id):
-        onlyfiles = [f for f in listdir("{0}/input".format(self.hw)) if isfile(join("{0}/input/".format(self.hw), f))]
+        onlyfiles = [f for f in listdir("input") if isfile(join("input/", f))]
         self.test_cases = {}
         for i in range(len(onlyfiles)):
             self.test_cases[i + 1] = onlyfiles[i]
@@ -36,7 +35,7 @@ class Grader:
             self.case_id_list = [case_id]
 
     def gen_output(self, case_id):
-        test_case = "%s/%s" % (self.hw + "/input", self.test_cases[case_id])
+        test_case = "%s/%s" % ("input", self.test_cases[case_id])
         output_file = "%s/%s" % (self.output_dir, self.test_cases[case_id])
       
         clist = [self.parser, test_case]
@@ -56,7 +55,7 @@ class Grader:
 
     def compare_file_content(self, case_id):
         output_file = "%s/%s" % (self.output_dir, self.test_cases[case_id])
-        solution = "%s/%s" % (self.hw + "/answer", self.test_cases[case_id])
+        solution = "%s/%s" % ("answer", self.test_cases[case_id])
 
         ok = True
         sample_content = []
@@ -115,11 +114,10 @@ class Grader:
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument("--script", help="Your parser to test.", required=True)
-    parser.add_argument("--hw", help="Directory of testcase.", required=True)
+    parser.add_argument("--script", help="Your parser to be tested.", required=True)
     args = parser.parse_args()
 
-    g = Grader(parser = "./" + args.script, hw = args.hw, output_dir = args.hw + "/outputs")
+    g = Grader(parser = "./" + args.script, output_dir = "outputs")
     g.get_case_id_list(0)
     g.run()
 
