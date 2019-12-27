@@ -15,7 +15,7 @@
 15: begin
 16:     var a : integer;
 17:     var b : array 1 to 10 of array 10 to 100 of integer;
-18:     var func2 : 100; // wrong, redeclared
+18:     var func2 : 100; // ok. can use
 19:     var c : 100;
 20:     print a[func()][0]; // wrong, func() not declared
 21:     begin

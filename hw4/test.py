@@ -92,7 +92,7 @@ class Grader:
                                     "yours:  " + output_content[idx].rstrip('\n')])
 
         test_case = "%s/%s" % ("input", self.test_cases[case_id])
-        clist = ["valgrind", "--leak-check=full", "--show-leak-kinds=all", "--error-exitcode=1", self.parser, test_case]
+        clist = ["valgrind", "--tool=memcheck", "--leak-check=full", "--errors-for-leak-kinds=all", "--error-exitcode=1", self.parser, test_case]
         cmd = " ".join(clist)
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         proc.communicate()

@@ -15,7 +15,7 @@ end func2
 begin
     var a : integer;
     var b : array 1 to 10 of array 10 to 100 of integer;
-    var func2 : 100; // wrong, redeclared
+    var func2 : 100; // ok. can use
     var c : 100;
     print a[func()][0]; // wrong, func() not declared
     begin
