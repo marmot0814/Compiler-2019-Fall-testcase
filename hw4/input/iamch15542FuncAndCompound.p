@@ -1,5 +1,5 @@
 //&T-
-FuncAndCompound;
+iamch15542FuncAndCompound;
 
 
 var arrLowBiggerUp : boolean;
@@ -60,4 +60,4 @@ begin
     print func4(k3[3]); // I think it is ok 
     print func4(k4[10]); // wrong, size not same
 end
-end FuncAndCompound
+end iamch15542FuncAndCompound

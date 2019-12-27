@@ -1,5 +1,5 @@
 1: //&T-
-2: binarytest;
+2: iamch15542binarytest;
 3:
 4: func(): integer;
 5: begin
@@ -87,7 +87,7 @@
 87:
 88:
 89: end
-90: end binarytest
+90: end iamch15542binarytest
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
@@ -120,7 +120,7 @@ vBoolArr                         variable   1(local)   boolean [4]
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-binarytest                       program    0(global)  void
+iamch15542binarytest             program    0(global)  void
 func                             function   0(global)  integer
 decimal                          function   0(global)  integer
 oct                              function   0(global)  integer

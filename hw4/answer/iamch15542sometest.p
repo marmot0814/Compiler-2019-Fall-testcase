@@ -1,72 +1,65 @@
 1: //&T-
-2: PrintandCompound;
+2: iamch15542sometest;
 3:
-4: // global declartion
-5: var a : integer;
-6: var b : string;
-7:
-8: func( a, b : integer; c : string ) : integer;   // a, b is ok
-9: begin
-10:     var a : boolean; // wrong, same as param
+4: var func : integer;
+5: func(): boolean; // redeclared
+6:     begin
+7:     end
+8: end func
+9:
+10: func2(): boolean;
 11:     begin
-12:         var a : string; // is ok
-13:         a := b; // will use param b, so it is wrong
-14:         for idx := 1 to 1150 do
-15:             b := idx; // param can be reference
-16:         end do
-17:     end
-18: end
-19: end func
-20:
-21: begin
-22:     var first : integer;
-23:     begin
-24:         var sec : integer;
-25:
-26:         sec := first; // ok, can not use
-27:         sec := a; // can use global
-28:
-29:     end
-30: end
-31: end PrintandCompound
+12:     end
+13: end func2
+14:
+15: begin
+16:     var a : integer;
+17:     var b : array 1 to 10 of array 10 to 100 of integer;
+18:     var func2 : 100; // wrong, redeclared
+19:     var c : 100;
+20:     print a[func()][0]; // wrong, func() not declared
+21:     begin
+22:         for i := 10 to 12 do
+23:               a := 10; // ok. can use
+24:         end do
+25:     end
+26: end
+27: end iamch15542sometest
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-idx                              loop_var   3(local)   integer
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-a                                variable   2(local)   string
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-a                                parameter  1(local)   integer
-b                                parameter  1(local)   integer
-c                                parameter  1(local)   string
+i                                loop_var   3(local)   integer
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-sec                              variable   2(local)   integer
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-first                            variable   1(local)   integer
+a                                variable   1(local)   integer
+b                                variable   1(local)   integer [9][90]
+func2                            constant   1(local)   integer          100
+c                                constant   1(local)   integer          100
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-PrintandCompound                 program    0(global)  void
-a                                variable   0(global)  integer
-b                                variable   0(global)  string
-func                             function   0(global)  integer          integer, integer, string
+iamch15542sometest               program    0(global)  void
+func                             variable   0(global)  integer
+func2                            function   0(global)  boolean
 --------------------------------------------------------------------------------------------------------------
-<Error> Found in line 10, column 9: symbol 'a' is redeclared
-        var a : boolean; // wrong, same as param
-            ^
-<Error> Found in line 13, column 14: assigning to 'string' from incompatible type 'integer'
-            a := b; // will use param b, so it is wrong
-                 ^
+<Error> Found in line 5, column 1: symbol 'func' is redeclared
+    func(): boolean; // redeclared
+    ^
+<Error> Found in line 20, column 13: used of undeclared function 'func'
+        print a[func()][0]; // wrong, func() not declared
+                ^

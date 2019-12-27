@@ -48,7 +48,7 @@ class Grader:
 
         stdout = str(proc.stdout.read(), "utf-8")
         stderr = str(proc.stderr.read(), "utf-8")
-        retcode = proc.wait()
+        proc.communicate()
         with open(output_file, "w") as out:
             out.write(stdout)
             out.write(stderr)

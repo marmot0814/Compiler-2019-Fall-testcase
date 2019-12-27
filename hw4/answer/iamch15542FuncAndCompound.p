@@ -1,5 +1,5 @@
 1: //&T-
-2: FuncAndCompound;
+2: iamch15542FuncAndCompound;
 3:
 4:
 5: var arrLowBiggerUp : boolean;
@@ -60,7 +60,7 @@
 60:     print func4(k3[3]); // I think it is ok
 61:     print func4(k4[10]); // wrong, size not same
 62: end
-63: end FuncAndCompound
+63: end iamch15542FuncAndCompound
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ k4                               variable   1(local)   boolean [1][4]
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-FuncAndCompound                  program    0(global)  void
+iamch15542FuncAndCompound        program    0(global)  void
 arrLowBiggerUp                   variable   0(global)  boolean
 func                             function   0(global)  integer          integer, integer [1][4]
 func2                            function   0(global)  void

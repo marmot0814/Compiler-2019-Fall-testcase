@@ -1,5 +1,5 @@
 //&T-
-binarytest;
+iamch15542binarytest;
 
 func(): integer;
 begin
@@ -87,4 +87,4 @@ begin
 
 
 end
-end binarytest
+end iamch15542binarytest

@@ -1,5 +1,5 @@
 //&T-
-sometest;
+iamch15542sometest;
 
 var func : integer;
 func(): boolean; // redeclared
@@ -24,4 +24,4 @@ begin
         end do
     end
 end
-end sometest
+end iamch15542sometest

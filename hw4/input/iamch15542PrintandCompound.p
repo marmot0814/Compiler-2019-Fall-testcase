@@ -1,5 +1,5 @@
 //&T-
-PrintandCompound;
+iamch15542PrintandCompound;
 
 // global declartion
 var a : integer;
@@ -28,4 +28,4 @@ begin
 
     end
 end
-end PrintandCompound
+end iamch15542PrintandCompound

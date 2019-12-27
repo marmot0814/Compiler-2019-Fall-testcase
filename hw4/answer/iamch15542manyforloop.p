@@ -1,5 +1,5 @@
 1: //&T-
-2: manyforloop;
+2: iamch15542manyforloop;
 3:
 4: // global declartion
 5: var CanUseInForLoop : integer;
@@ -28,7 +28,7 @@
 28:     end
 29:     end do
 30: end
-31: end manyforloop
+31: end iamch15542manyforloop
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ compoundvar                      variable   1(local)   integer
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-manyforloop                      program    0(global)  void
+iamch15542manyforloop            program    0(global)  void
 CanUseInForLoop                  variable   0(global)  integer
 --------------------------------------------------------------------------------------------------------------
 <Error> Found in line 26, column 13: symbol 'idx' is redeclared

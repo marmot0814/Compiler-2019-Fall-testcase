@@ -1,5 +1,5 @@
 //&T-
-anything;
+iamch15542anything;
 
 // global declartion
 var a : integer;
@@ -19,4 +19,4 @@ begin
         end
     end
 end
-end anything
+end iamch15542anything

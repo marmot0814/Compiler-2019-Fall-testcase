@@ -1,5 +1,5 @@
 //&T-
-IfandWhile;
+iamch15542IfandWhile;
 
 // global declartion
 var a : integer;
@@ -29,6 +29,8 @@ begin
     var d, e: integer;
     var arr: array 1 to 5 of integer;
     var i : integer;
+    var aaaa : 2;
+    aaaa[0] := 1 + 0.2 + true; // wrong, left over array subscript, right bool type wrong
 
     c := a + 6.11111; // ok, because all is integer or real
     b := "stringgg" + "stringg"; // ok, because all is integer
@@ -45,7 +47,7 @@ begin
 
     // condition statement
     if a > b then // wrong, integer and string
-        print arr; // ok, type correct
+        print arr; // wrong, can not print array
     else
         print " a <= b \n"; // ok
     end if
@@ -70,7 +72,7 @@ begin
     end do
 
     if "string" > b then // wrong, type wrong
-        print func(1, true); // ok
+        print func(1, true); // wrong, param type wrong
     else
         print " a <= b \n"; // ok
     end if
@@ -110,4 +112,4 @@ begin
     print func(2 * 4, 3) * a * arr[0]; // ok, need 2 param, have 2
 
 end
-end IfandWhile
+end iamch15542IfandWhile

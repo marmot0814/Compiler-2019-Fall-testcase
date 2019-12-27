@@ -1,66 +1,52 @@
 1: //&T-
-2: sometest;
+2: iamch15542anything;
 3:
-4: var func : integer;
-5: func(): boolean; // redeclared
-6:     begin
-7:     end
-8: end func
-9:
-10: func2(): boolean;
-11:     begin
-12:     end
-13: end func2
-14:
-15: begin
-16:     var a : integer;
-17:     var b : array 1 to 10 of array 10 to 100 of integer;
-18:     var func2 : 100; // wrong, redeclared
-19:     var c : 100;
-20:     print a[func()][0]; // wrong, func() not declared
-21:     begin
-22:         for i := 10 to 12 do
-23:               a := 10; // ok. can use
-24:         end do
-25:     end
-26: end
+4: // global declartion
+5: var a : integer;
+6: var b : string;
+7:
+8: begin
+9:     var first : integer;
+10:     begin
+11:         var sec : integer;
+12:         begin
+13:             var third : array 1 to 10 of integer;
+14:             begin
+15:                 var fourth : boolean;
+16:
+17:                 print fourth + third;
+18:             end
+19:         end
+20:     end
+21: end
+22: end iamch15542anything
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------
-==============================================================================================================
-Name                             Kind       Level      Type             Attribute
---------------------------------------------------------------------------------------------------------------
+fourth                           variable   4(local)   boolean
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-i                                loop_var   3(local)   integer
+third                            variable   3(local)   integer [9]
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
+sec                              variable   2(local)   integer
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-a                                variable   1(local)   integer
-b                                variable   1(local)   integer [9][90]
-c                                constant   1(local)   integer          100
+first                            variable   1(local)   integer
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-sometest                         program    0(global)  void
-func                             variable   0(global)  integer
-func2                            function   0(global)  boolean
+iamch15542anything               program    0(global)  void
+a                                variable   0(global)  integer
+b                                variable   0(global)  string
 --------------------------------------------------------------------------------------------------------------
-<Error> Found in line 5, column 1: symbol 'func' is redeclared
-    func(): boolean; // redeclared
-    ^
-<Error> Found in line 18, column 9: symbol 'func2' is redeclared
-        var func2 : 100; // wrong, redeclared
-            ^
-<Error> Found in line 20, column 13: used of undeclared function 'func'
-        print a[func()][0]; // wrong, func() not declared
-                ^
+<Error> Found in line 17, column 30: invalid operands to binary operation '+' ('boolean' and 'integer [9]')
+                    print fourth + third;
+                                 ^

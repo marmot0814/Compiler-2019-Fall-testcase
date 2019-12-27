@@ -1,34 +1,50 @@
 1: //&T-
-2: anything;
+2: iamch15542PrintandCompound;
 3:
 4: // global declartion
 5: var a : integer;
 6: var b : string;
 7:
-8: begin
-9:     var first : integer;
-10:     begin
-11:         var sec : integer;
-12:         begin
-13:             var third : array 1 to 10 of integer;
-14:             begin
-15:                 var fourth : boolean;
-16:
-17:                 print fourth + third;
-18:             end
-19:         end
-20:     end
-21: end
-22: end anything
+8: func( a, b : integer; c : string ) : integer;   // a, b is ok
+9: begin
+10:     var a : boolean; // wrong, same as param
+11:     begin
+12:         var a : string; // is ok
+13:         a := b; // will use param b, so it is wrong
+14:         for idx := 1 to 1150 do
+15:             b := idx; // param can be reference
+16:         end do
+17:     end
+18: end
+19: end func
+20:
+21: begin
+22:     var first : integer;
+23:     begin
+24:         var sec : integer;
+25:
+26:         sec := first; // ok, can not use
+27:         sec := a; // can use global
+28:
+29:     end
+30: end
+31: end iamch15542PrintandCompound
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-fourth                           variable   4(local)   boolean
+idx                              loop_var   3(local)   integer
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-third                            variable   3(local)   integer [9]
+a                                variable   2(local)   string
+--------------------------------------------------------------------------------------------------------------
+==============================================================================================================
+Name                             Kind       Level      Type             Attribute
+--------------------------------------------------------------------------------------------------------------
+a                                parameter  1(local)   integer
+b                                parameter  1(local)   integer
+c                                parameter  1(local)   string
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
@@ -43,10 +59,14 @@ first                            variable   1(local)   integer
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute
 --------------------------------------------------------------------------------------------------------------
-anything                         program    0(global)  void
+iamch15542PrintandCompound       program    0(global)  void
 a                                variable   0(global)  integer
 b                                variable   0(global)  string
+func                             function   0(global)  integer          integer, integer, string
 --------------------------------------------------------------------------------------------------------------
-<Error> Found in line 17, column 30: invalid operands to binary operation '+' ('boolean' and 'integer [9]')
-                    print fourth + third;
-                                 ^
+<Error> Found in line 10, column 9: symbol 'a' is redeclared
+        var a : boolean; // wrong, same as param
+            ^
+<Error> Found in line 13, column 14: assigning to 'string' from incompatible type 'integer'
+            a := b; // will use param b, so it is wrong
+                 ^

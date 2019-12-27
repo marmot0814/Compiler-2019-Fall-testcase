@@ -1,5 +1,5 @@
 //&T-
-manyforloop;
+iamch15542manyforloop;
 
 // global declartion
 var CanUseInForLoop : integer;
@@ -28,4 +28,4 @@ begin
     end
     end do
 end
-end manyforloop
+end iamch15542manyforloop
