@@ -157,7 +157,7 @@ func3                            function   0(global)  void
 <Error> Found in line 33, column 24: invalid operands to binary operation '+' ('real' and 'boolean')
         aaaa[0] := 1 + 0.2 + true; // wrong, left over array subscript, right bool type wrong
                            ^
-<Error> Found in line 37, column 23: assigning to 'integer' from incompatible type 'string'
+<Error> Found in line 37, column 23: assigning to 'int' from incompatible type 'string'
         int := "stringgg" + "stringg"; // wrong, because right need be integer
                           ^
 <Error> Found in line 39, column 10: array assignment is not allowed

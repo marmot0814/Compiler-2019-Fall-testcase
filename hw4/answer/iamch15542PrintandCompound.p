@@ -67,6 +67,6 @@ func                             function   0(global)  integer          integer,
 <Error> Found in line 10, column 9: symbol 'a' is redeclared
         var a : boolean; // wrong, same as param
             ^
-<Error> Found in line 13, column 14: assigning to 'string' from incompatible type 'integer'
+<Error> Found in line 13, column 14: assigning to 'a' from incompatible type 'integer'
             a := b; // will use param b, so it is wrong
                  ^
