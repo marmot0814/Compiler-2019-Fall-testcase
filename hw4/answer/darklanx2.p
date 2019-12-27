@@ -21,33 +21,30 @@
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute  
 --------------------------------------------------------------------------------------------------------------
-d                                variable   2(local)   real                        
+d                                variable   2(local)   real             
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute  
 --------------------------------------------------------------------------------------------------------------
-a                                parameter  1(local)   integer                     
-b                                parameter  1(local)   real [1][2]                 
+a                                parameter  1(local)   integer          
+b                                parameter  1(local)   real [1][2]      
 c                                constant   1(local)   string           "hello world!"
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute  
 --------------------------------------------------------------------------------------------------------------
-a                                variable   1(local)   integer                     
-b                                variable   1(local)   real [1][2]                 
+a                                variable   1(local)   integer          
+b                                variable   1(local)   real [1][2]      
 --------------------------------------------------------------------------------------------------------------
 ==============================================================================================================
 Name                             Kind       Level      Type             Attribute  
 --------------------------------------------------------------------------------------------------------------
-darklanx2Error                   program    0(global)  void                        
+darklanx2Error                   program    0(global)  void             
 func                             function   0(global)  boolean          integer, real [1][2]
 --------------------------------------------------------------------------------------------------------------
 <Error> Found in line 18, column 27: incompatible types passing 'boolean' to parameter of type 'real [1][2]'
         print func(a, func(a, func(a,b)));
                               ^
-<Error> Found in line 18, column 19: incompatible types passing 'boolean' to parameter of type 'real [1][2]'
-        print func(a, func(a, func(a,b)));
-                      ^
 <Error> Found in line 2, column 1: program name must be the same as filename
     darklanx2Error;
     ^
