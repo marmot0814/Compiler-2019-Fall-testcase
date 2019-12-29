@@ -113,18 +113,18 @@ class Grader:
             c_name = self.test_cases[b_id]
             ok, diff_output, memory_leak = self.test_sample_case(b_id)
             if ok:
-                print(Colors.YELLOW + "Running test case: " + Colors.BLUE + c_name + "  ==>  " + Colors.GREEN + "Pass!", end=',')
+                print("{0: <60} ==> {1: <16}".format(Colors.YELLOW + "Running test case: " + Colors.BLUE + c_name, Colors.GREEN + "Pass!,"), end='')
                 if memory_leak:
-                    print(Colors.RED + "  Memory Leak!!!")
+                    print(Colors.RED + "Memory Leak!!!")
                 else:
-                    print(Colors.GREEN + "  No Memory Leak!")
+                    print(Colors.GREEN + "No Memory Leak!")
                 
             else:
-                print(Colors.YELLOW + "Running test case: " + Colors.BLUE + c_name + "  ==>  " + Colors.RED + "Fail!", end=',')
+                print("{0: <60} ==> {1: <16}".format(Colors.YELLOW + "Running test case: " + Colors.BLUE + c_name, Colors.RED + "Fail!,"), end='')
                 if memory_leak:
-                    print(Colors.RED + "  Memory Leak!!!")
+                    print(Colors.RED + "Memory Leak!!!")
                 else:
-                    print(Colors.GREEN + "  No Memory Leak!")
+                    print(Colors.GREEN + "No Memory Leak!")
                 for output in diff_output:
                     print(Colors.RED + output[0])
                     print(Colors.BLUE + output[1])
