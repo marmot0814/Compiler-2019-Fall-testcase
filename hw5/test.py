@@ -6,6 +6,7 @@ class Runner:
     def __init__(self, config):
         self.compiler = config.compiler
         self.user = config.user
+        self.io = config.io
         self.testcases = self.get_testcases()
         self.compile_source_code()
         self.compile_riscv_code()
@@ -15,7 +16,7 @@ class Runner:
         if not os.path.isdir(os.path.join("execution")):
             subprocess.run(["mkdir", "execution"])
         for testcase in self.testcases:
-            subprocess.run(["riscv64-unknown-elf-gcc", "io.c", "-o", os.path.join("execution", testcase), os.path.join("riscv_code", testcase + ".s")])
+            subprocess.run(["riscv64-unknown-elf-gcc", self.io, "-o", os.path.join("execution", testcase), os.path.join("riscv_code", testcase + ".s")])
 
 
     def run_riscv_code(self):
@@ -43,6 +44,7 @@ def Parser():
     parser = ArgumentParser()
     parser.add_argument("--compiler", help="Your Compiler Address", required=True)
     parser.add_argument("--user", help="Your user name", required=True)
+    parser.add_argument("--io", help="Your io.c file", default="io.c");
     return parser.parse_args()
 
 main()

@@ -3,3 +3,5 @@ parser
 .*
 outputs
 compiler
+execution
+riscv_code
